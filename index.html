@@ -37,16 +37,24 @@
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="MoneyGo Partners">
         <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28" focusable="false" aria-hidden="true">
+          <svg viewBox="0 0 44 44" width="34" height="34" focusable="false" aria-hidden="true">
             <defs>
-              <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#4f7cff" />
+              <linearGradient id="mgpGrad" x1="4" y1="4" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#5b8cff" />
+                <stop offset=".55" stop-color="#3fb0cf" />
                 <stop offset="1" stop-color="#27d3a2" />
               </linearGradient>
             </defs>
-            <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#bg)" />
-            <path d="M9 22V10l7 7 7-7v12" fill="none" stroke="#0b0f1a"
-                  stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="3" y="3" width="38" height="38" rx="13" fill="url(#mgpGrad)" />
+            <rect x="3.75" y="3.75" width="36.5" height="36.5" rx="12.25" fill="none"
+                  stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5" />
+            <g fill="none" stroke="#08131f" stroke-width="3"
+               stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 18h14" />
+              <path d="M22.5 13.5 27 18l-4.5 4.5" />
+              <path d="M31 26H17" />
+              <path d="M21.5 21.5 17 26l4.5 4.5" />
+            </g>
           </svg>
         </span>
         <span class="brand-text">MoneyGo<span class="brand-accent"> Partners</span></span>
@@ -86,6 +94,15 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-inner reveal">
         <p class="eyebrow" data-i18n="hero_badge">Независимый партнёрский каталог</p>
+
+        <!-- Официальный логотип MoneyGo (с money-go.com) рядом с надписью -->
+        <div class="hero-coin">
+          <img src="assets/moneygo-icon.png" alt="MoneyGo" width="64" height="64"
+               decoding="async" />
+          <span class="hero-coin-word">MoneyGo</span>
+          <span class="hero-coin-label" data-i18n="hero_coin_label">Цифровая валюта MoneyGo</span>
+        </div>
+
         <h1 class="hero-title" data-i18n="hero_title">
           Покупайте и продавайте MoneyGo через проверенных партнёров
         </h1>
@@ -177,8 +194,7 @@
           </div>
           <div class="filter-chips" role="group" aria-label="Фильтр партнёров">
             <button type="button" class="chip is-active" data-filter="all" data-i18n="partners_filter_all">Все</button>
-            <button type="button" class="chip" data-filter="active" data-i18n="partners_filter_active">Действующие</button>
-            <button type="button" class="chip" data-filter="auto" data-i18n="partners_filter_auto">AUTO</button>
+            <button type="button" class="chip" data-filter="top" data-i18n="partners_filter_top">Top Rated</button>
           </div>
         </div>
 
@@ -269,9 +285,6 @@
           </div>
           <div class="form-footer field-full">
             <button type="submit" class="btn btn-primary" data-i18n="form_submit">Отправить заявку</button>
-            <a class="btn btn-ghost" id="mailto-fallback"
-               href="mailto:ps@in1go.cc?subject=MoneyGo%20Partners%20—%20заявка%20партнёра"
-               data-i18n="form_fallback">Написать на почту</a>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
@@ -321,9 +334,16 @@
       <div class="footer-brand">
         <a class="brand" href="#top" aria-label="MoneyGo Partners">
           <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
-              <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#bg)" />
-              <path d="M9 22V10l7 7 7-7v12" fill="none" stroke="#0b0f1a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            <svg viewBox="0 0 44 44" width="30" height="30" aria-hidden="true">
+              <rect x="3" y="3" width="38" height="38" rx="13" fill="url(#mgpGrad)" />
+              <rect x="3.75" y="3.75" width="36.5" height="36.5" rx="12.25" fill="none"
+                    stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5" />
+              <g fill="none" stroke="#08131f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 18h14" />
+                <path d="M22.5 13.5 27 18l-4.5 4.5" />
+                <path d="M31 26H17" />
+                <path d="M21.5 21.5 17 26l4.5 4.5" />
+              </g>
             </svg>
           </span>
           <span class="brand-text">MoneyGo<span class="brand-accent"> Partners</span></span>

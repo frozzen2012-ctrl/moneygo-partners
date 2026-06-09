@@ -99,9 +99,38 @@
     });
   }
 
+  /* ----------------------- Валюты: иконки/флаги ----------------------- */
+  // Простые инлайн-SVG флагов (надёжнее emoji: на Windows эмодзи-флаги не рисуются).
+  var FLAGS = {
+    TH: '<svg viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#A51931"/><rect y="1" width="9" height="4" fill="#F4F5F8"/><rect y="2" width="9" height="2" fill="#2D2A4A"/></svg>',
+    RU: '<svg viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect y="2" width="9" height="2" fill="#0039A6"/><rect y="4" width="9" height="2" fill="#D52B1E"/></svg>',
+    KZ: '<svg viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#00AFCA"/><circle cx="4.5" cy="2.7" r="1.15" fill="#FEC50C"/><rect x="1.4" y="4.2" width="0.5" height="1.2" fill="#FEC50C"/></svg>'
+  };
+
+  // Метаданные валют: цвет круглой иконки, символ, флаг (для фиата).
+  var CURRENCY_META = {
+    USDT:  { symbol: "₮", color: "#26A17B", label: "USDT" },
+    Volet: { symbol: "V", color: "#1F6FEB", label: "Volet" },
+    THB:   { symbol: "฿", color: "#27406b", label: "THB", flag: "TH" },
+    RUB:   { symbol: "₽", color: "#3a3f52", label: "RUB", flag: "RU" },
+    KZT:   { symbol: "₸", color: "#0c6b7a", label: "KZT", flag: "KZ" }
+  };
+
+  function currencyChip(code) {
+    var m = CURRENCY_META[code] || { symbol: code.slice(0, 1), color: "#3a3f52", label: code };
+    var flag = m.flag && FLAGS[m.flag]
+      ? '<span class="cur-flag" aria-hidden="true">' + FLAGS[m.flag] + "</span>"
+      : "";
+    return '<span class="cur-chip" title="' + escapeHtml(m.label) + '">' +
+      '<span class="cur-icon" style="background:' + m.color + '" aria-hidden="true">' +
+      escapeHtml(m.symbol) + "</span>" +
+      flag +
+      '<span class="cur-code">' + escapeHtml(m.label) + "</span>" +
+      "</span>";
+  }
+
   function matchesFilter(p) {
-    if (state.filter === "active") return p.status === "active";
-    if (state.filter === "auto") return (p.badges || []).indexOf("AUTO") !== -1;
+    if (state.filter === "top") return (p.badges || []).indexOf("Top Rated") !== -1;
     return true;
   }
 
@@ -130,29 +159,34 @@
         '">' + escapeHtml(initials(p.name)) + "</span>";
     }
 
-    // Бейджи: статус + AUTO + валюты
+    // Бейджи: только Top Rated (со звездой). У остальных партнёров бейджей нет.
     var badges = "";
-    var statusKey = p.status === "potential" ? "status_potential" : "status_active";
-    var statusCls = p.status === "potential" ? "badge-status-potential" : "badge-status-active";
-    badges += '<span class="badge ' + statusCls + '">' + escapeHtml(t(statusKey, lang)) + "</span>";
     (p.badges || []).forEach(function (b) {
-      var cls = b === "AUTO" ? "badge-auto" : "";
-      badges += '<span class="badge ' + cls + '">' + escapeHtml(b) + "</span>";
+      if (b === "Top Rated") {
+        badges +=
+          '<span class="badge badge-top">' +
+          '<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">' +
+          '<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.2l1-5.8L3.5 9.2l5.9-.9L12 3z"' +
+          ' fill="currentColor"/></svg>' +
+          escapeHtml(b) + "</span>";
+      } else {
+        badges += '<span class="badge">' + escapeHtml(b) + "</span>";
+      }
     });
-    (p.currencies || []).forEach(function (c) {
-      badges += '<span class="badge badge-cur">' + escapeHtml(c) + "</span>";
-    });
+    var badgesHtml = badges ? '<div class="partner-badges">' + badges + "</div>" : "";
 
-    var cur = (p.currencies && p.currencies.length)
-      ? '<span class="partner-currencies">' + escapeHtml(p.currencies.join(" · ")) + "</span>"
+    // Валюты — круглые иконки + флаг для фиата
+    var curHtml = (p.currencies && p.currencies.length)
+      ? '<div class="cur-list">' + p.currencies.map(currencyChip).join("") + "</div>"
       : "";
 
     a.innerHTML =
       '<div class="partner-top">' +
         logoHtml +
-        '<div><div class="partner-name">' + escapeHtml(p.name) + "</div>" + cur + "</div>" +
+        '<div class="partner-name">' + escapeHtml(p.name) + "</div>" +
       "</div>" +
-      '<div class="partner-badges">' + badges + "</div>" +
+      badgesHtml +
+      curHtml +
       '<div class="partner-foot">' +
         "<span>" + escapeHtml(t("partners_open", lang)) +
           ' <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">' +

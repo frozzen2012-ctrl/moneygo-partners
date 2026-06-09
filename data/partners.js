@@ -6,82 +6,87 @@
  *   name       {string}   Название (не переводится).
  *   logo       {string}   Путь к локальному логотипу. Пусто => плитка с инициалами.
  *   url        {string}   Внешняя ссылка на сайт партнёра.
- *   badges     {string[]} Бейджи, напр. ["AUTO"].
+ *   badges     {string[]} Бейджи карточки. "Top Rated" — выделяет топ-партнёров.
  *   status     {string}   "active" (действующий) | "potential" (потенциальный).
- *   currencies {string[]} Поддерживаемые валюты (опционально).
+ *   currencies {string[]} Коды валют. Иконка/флаг берётся из CURRENCY_META в js/main.js.
+ *                         Поддерживаемые коды: USDT, THB, RUB, KZT, Volet.
+ *
+ * Порядок в массиве = порядок на странице. Сверху — топовые партнёры.
  */
 window.PARTNERS = [
-  {
-    name: "MINE.exchange",
-    logo: "assets/logos/mine.svg",
-    url: "https://mine.exchange/",
-    badges: ["AUTO"],
-    status: "active",
-    currencies: ["BTC", "USDT"]
-  },
-  {
-    name: "UNIOCHANGE",
-    logo: "assets/logos/uniochange.png",
-    url: "https://uniochange.com/",
-    badges: ["AUTO"],
-    status: "active",
-    currencies: ["BTC", "USDT"]
-  },
+  // --- Топ-партнёры (бейдж Top Rated) ---
   {
     name: "Hybrid Digital Exchanger",
     logo: "assets/logos/hd-change.svg",
     url: "https://hd-change.com/",
-    badges: ["AUTO"],
+    badges: ["Top Rated"],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT", "THB"]
   },
   {
     name: "TOP EXCHANGE",
     logo: "assets/logos/top-exchange.svg",
     url: "https://top-exchange.com/",
-    badges: ["AUTO"],
+    badges: ["Top Rated"],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT"]
   },
   {
     name: "IN ONE GO",
     logo: "assets/logos/in1go.png",
     url: "https://in1go.cc/",
-    badges: ["AUTO"],
+    badges: ["Top Rated"],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT"]
+  },
+
+  // --- Остальные партнёры (без бейджей, произвольный порядок) ---
+  {
+    name: "MINE.exchange",
+    logo: "assets/logos/mine.svg",
+    url: "https://mine.exchange/",
+    badges: [],
+    status: "active",
+    currencies: ["USDT"]
+  },
+  {
+    name: "UNIOCHANGE",
+    logo: "assets/logos/uniochange.png",
+    url: "https://uniochange.com/",
+    badges: [],
+    status: "active",
+    currencies: ["USDT", "Volet"]
   },
   {
     name: "Abcobmen",
     logo: "assets/logos/abcobmen.svg",
     url: "https://abcobmen.net/",
-    badges: ["AUTO"],
+    badges: [],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT", "RUB"]
   },
   {
     name: "WMExchange24",
     logo: "assets/logos/wmexchange24.png",
     url: "https://wmexchange24.com/",
-    badges: ["AUTO"],
+    badges: [],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT"]
   },
   {
-    name: "MULTIVAL exchange",
-    logo: "", // логотип не спарсился (SPA, инлайн-SVG) — fallback на плитку с инициалами; см. assets/logos/README.md
-
-    url: "https://multival.is/en/",
-    badges: ["AUTO"],
+    name: "ATPayz",
+    logo: "assets/logos/atpayz.webp",
+    url: "https://atpayz.com/",
+    badges: [],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT"]
   },
   {
     name: "BITKIT.MONEY",
     logo: "assets/logos/bitkit.svg",
     url: "https://bitkit.money/",
-    badges: ["AUTO"],
+    badges: [],
     status: "active",
-    currencies: ["BTC", "USDT"]
+    currencies: ["USDT", "RUB", "KZT"]
   }
 ];

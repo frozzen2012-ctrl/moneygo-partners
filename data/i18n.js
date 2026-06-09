@@ -21,6 +21,7 @@ window.I18N = {
 
     // Hero
     hero_badge: "Независимый партнёрский каталог",
+    hero_coin_label: "Цифровая валюта MoneyGo",
     hero_title: "Покупайте и продавайте MoneyGo через проверенных партнёров",
     hero_sub: "MoneyGo Partners собирает обменники, которые помогают купить и продать цифровую валюту MoneyGo за криптовалюту. Один удобный каталог вместо поиска вслепую — выбирайте партнёра и переходите напрямую на его сайт.",
     hero_cta_primary: "Смотреть партнёров",
@@ -46,8 +47,7 @@ window.I18N = {
     partners_note: "Список включает партнёров MoneyGo со статусом действующих или потенциальных.",
     partners_search_ph: "Поиск по названию или бейджу…",
     partners_filter_all: "Все",
-    partners_filter_active: "Действующие",
-    partners_filter_auto: "AUTO",
+    partners_filter_top: "Top Rated",
     partners_empty: "Ничего не найдено. Попробуйте изменить запрос.",
     partners_open: "Открыть сайт",
     status_active: "Действующий",
@@ -124,6 +124,7 @@ window.I18N = {
 
     // Hero
     hero_badge: "Independent partner directory",
+    hero_coin_label: "MoneyGo digital currency",
     hero_title: "Buy and sell MoneyGo through trusted partners",
     hero_sub: "MoneyGo Partners curates exchangers that help you buy and sell the MoneyGo digital currency for crypto. One convenient directory instead of searching blind — pick a partner and go straight to their site.",
     hero_cta_primary: "View partners",
@@ -149,8 +150,7 @@ window.I18N = {
     partners_note: "The list includes MoneyGo partners with an active or potential status.",
     partners_search_ph: "Search by name or badge…",
     partners_filter_all: "All",
-    partners_filter_active: "Active",
-    partners_filter_auto: "AUTO",
+    partners_filter_top: "Top Rated",
     partners_empty: "Nothing found. Try a different query.",
     partners_open: "Open site",
     status_active: "Active",
