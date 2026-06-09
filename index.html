@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO (значения дублируются и обновляются из i18n при смене языка) -->
+  <title data-i18n="page_title">MoneyGo Partners — проверенные обменники MoneyGo</title>
+  <meta name="description" data-i18n="meta_description" data-i18n-attr="content"
+        content="MoneyGo Partners — независимый каталог проверенных партнёров-обменников MoneyGo." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="canonical" href="https://frozzen2012-ctrl.github.io/moneygo-partners/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" data-i18n="page_title" data-i18n-attr="content"
+        content="MoneyGo Partners" />
+  <meta property="og:description" data-i18n="meta_description" data-i18n-attr="content"
+        content="Независимый каталог проверенных партнёров-обменников MoneyGo." />
+  <meta property="og:url" content="https://frozzen2012-ctrl.github.io/moneygo-partners/" />
+  <meta property="og:image" content="assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Пропустить к контенту (доступность) -->
+  <a class="skip-link" href="#partners" data-i18n="nav_partners">Партнёры</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="MoneyGo Partners">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" focusable="false" aria-hidden="true">
+            <defs>
+              <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#4f7cff" />
+                <stop offset="1" stop-color="#27d3a2" />
+              </linearGradient>
+            </defs>
+            <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#bg)" />
+            <path d="M9 22V10l7 7 7-7v12" fill="none" stroke="#0b0f1a"
+                  stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span class="brand-text">MoneyGo<span class="brand-accent"> Partners</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#partners" data-i18n="nav_partners">Партнёры</a>
+        <a href="#how" data-i18n="nav_how">Как это работает</a>
+        <a href="#become" data-i18n="nav_become">Стать партнёром</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Язык / Language">
+          <button type="button" class="lang-btn" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
+                aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" hidden>
+      <a href="#partners" data-i18n="nav_partners">Партнёры</a>
+      <a href="#how" data-i18n="nav_how">Как это работает</a>
+      <a href="#become" data-i18n="nav_become">Стать партнёром</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner reveal">
+        <p class="eyebrow" data-i18n="hero_badge">Независимый партнёрский каталог</p>
+        <h1 class="hero-title" data-i18n="hero_title">
+          Покупайте и продавайте MoneyGo через проверенных партнёров
+        </h1>
+        <p class="hero-sub" data-i18n="hero_sub">
+          MoneyGo Partners собирает обменники, которые помогают купить и продать
+          цифровую валюту MoneyGo за криптовалюту.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#partners" data-i18n="hero_cta_primary">Смотреть партнёров</a>
+          <a class="btn btn-ghost" href="#become" data-i18n="hero_cta_secondary">Стать партнёром</a>
+        </div>
+
+        <ul class="hero-stats" aria-label="Ключевые факты">
+          <li>
+            <span class="stat-num" data-stat="partners">9</span>
+            <span class="stat-label" data-i18n="hero_stat_partners">проверенных партнёров</span>
+          </li>
+          <li>
+            <span class="stat-num">AUTO</span>
+            <span class="stat-label" data-i18n="hero_stat_auto">автоматический обмен</span>
+          </li>
+          <li>
+            <span class="stat-num">100%</span>
+            <span class="stat-label" data-i18n="hero_stat_independent">независимый ресурс</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ЦЕННОСТЬ / ДОВЕРИЕ ============ -->
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="trust_title">Почему этот каталог</h2>
+          <p class="section-sub" data-i18n="trust_sub">
+            Раньше список обменников жил на самом MoneyGo. После редизайна страницу убрали —
+            а потребность покупать и продавать валюту осталась.
+          </p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-i18n="value_1_title">Проверенные партнёры</h3>
+            <p data-i18n="value_1_text">Обменники со статусом действующих или потенциальных партнёров MoneyGo.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 1 0-5.66-5.66l-1.5 1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 1 0 5.66 5.66l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 data-i18n="value_2_title">Прямые ссылки</h3>
+            <p data-i18n="value_2_text">Каждая карточка ведёт напрямую на сайт партнёра. Мы не держим ваши средства.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-i18n="value_3_title">Автоматический обмен</h3>
+            <p data-i18n="value_3_text">Партнёры с бейджем AUTO обрабатывают заявки автоматически.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 8h.01M11 12h1v4h1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-i18n="value_4_title">Прозрачность</h3>
+            <p data-i18n="value_4_text">Это независимый ресурс. Мы не даём финансовых советов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ПАРТНЁРЫ ============ -->
+    <section class="section section-alt" id="partners">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="partners_title">Партнёры-обменники</h2>
+          <p class="section-note" data-i18n="partners_note">
+            Список включает партнёров MoneyGo со статусом действующих или потенциальных.
+          </p>
+        </div>
+
+        <div class="partners-controls reveal">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input type="search" id="partner-search" data-i18n="partners_search_ph"
+                   data-i18n-attr="placeholder" placeholder="Поиск по названию или бейджу…"
+                   aria-label="Поиск партнёров" autocomplete="off" />
+          </div>
+          <div class="filter-chips" role="group" aria-label="Фильтр партнёров">
+            <button type="button" class="chip is-active" data-filter="all" data-i18n="partners_filter_all">Все</button>
+            <button type="button" class="chip" data-filter="active" data-i18n="partners_filter_active">Действующие</button>
+            <button type="button" class="chip" data-filter="auto" data-i18n="partners_filter_auto">AUTO</button>
+          </div>
+        </div>
+
+        <!-- Сетка рендерится из data/partners.js -->
+        <div class="partners-grid" id="partners-grid"></div>
+        <p class="partners-empty" id="partners-empty" data-i18n="partners_empty" hidden>
+          Ничего не найдено. Попробуйте изменить запрос.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ КАК ЭТО РАБОТАЕТ ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="how_title">Как купить или продать MoneyGo</h2>
+          <p class="section-sub" data-i18n="how_sub">
+            Три простых шага. Сам обмен происходит на стороне выбранного партнёра.
+          </p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <h3 data-i18n="step_1_title">Выберите партнёра</h3>
+            <p data-i18n="step_1_text">Откройте каталог и выберите обменник по бейджам и статусу.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">2</span>
+            <h3 data-i18n="step_2_title">Перейдите на сайт</h3>
+            <p data-i18n="step_2_text">Нажмите на карточку — откроется сайт партнёра в новой вкладке.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">3</span>
+            <h3 data-i18n="step_3_title">Совершите обмен</h3>
+            <p data-i18n="step_3_text">Укажите направление, сумму и реквизиты. Следуйте инструкциям партнёра.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ СТАТЬ ПАРТНЁРОМ ============ -->
+    <section class="section section-alt" id="become">
+      <div class="container become-inner">
+        <div class="become-copy reveal">
+          <h2 data-i18n="become_title">Станьте партнёром MoneyGo Partners</h2>
+          <p class="section-sub" data-i18n="become_sub">
+            Вы обменник и работаете с MoneyGo? Добавьтесь в каталог и получайте целевой трафик.
+          </p>
+          <ul class="check-list">
+            <li data-i18n="become_benefit_1">Целевая аудитория, готовая к обмену</li>
+            <li data-i18n="become_benefit_2">Прямая ссылка на ваш сайт без посредников</li>
+            <li data-i18n="become_benefit_3">Бейджи AUTO и поддерживаемых валют на карточке</li>
+          </ul>
+        </div>
+
+        <!--
+          TODO (форма): зарегистрируй форму на formspree.io с получателем ps@in1go.cc
+          и вставь endpoint в action ниже (вид: https://formspree.io/f/xxxxxxxx).
+          Пока стоит плейсхолдер — JS определяет его и переключается на mailto-фолбэк.
+        -->
+        <form class="become-form reveal" id="partner-form"
+              action="<FORMSPREE_ENDPOINT>" method="POST" novalidate>
+          <div class="field">
+            <label for="f-name" data-i18n="form_name">Ваше имя</label>
+            <input id="f-name" name="name" type="text" required
+                   data-i18n="form_name_ph" data-i18n-attr="placeholder" placeholder="Как к вам обращаться" />
+          </div>
+          <div class="field">
+            <label for="f-exchange" data-i18n="form_exchange">Название обменника</label>
+            <input id="f-exchange" name="exchange" type="text" required
+                   data-i18n="form_exchange_ph" data-i18n-attr="placeholder" placeholder="Например, MINE.exchange" />
+          </div>
+          <div class="field">
+            <label for="f-site" data-i18n="form_site">Сайт</label>
+            <input id="f-site" name="site" type="url"
+                   data-i18n="form_site_ph" data-i18n-attr="placeholder" placeholder="https://…" />
+          </div>
+          <div class="field">
+            <label for="f-contact" data-i18n="form_contact">Контакт</label>
+            <input id="f-contact" name="contact" type="text" required
+                   data-i18n="form_contact_ph" data-i18n-attr="placeholder" placeholder="Email или Telegram" />
+          </div>
+          <div class="field field-full">
+            <label for="f-message" data-i18n="form_message">Сообщение</label>
+            <textarea id="f-message" name="message" rows="4"
+                      data-i18n="form_message_ph" data-i18n-attr="placeholder"
+                      placeholder="Коротко о вашем обменнике и условиях"></textarea>
+          </div>
+          <div class="form-footer field-full">
+            <button type="submit" class="btn btn-primary" data-i18n="form_submit">Отправить заявку</button>
+            <a class="btn btn-ghost" id="mailto-fallback"
+               href="mailto:ps@in1go.cc?subject=MoneyGo%20Partners%20—%20заявка%20партнёра"
+               data-i18n="form_fallback">Написать на почту</a>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="container container-narrow">
+        <div class="section-head reveal">
+          <h2 data-i18n="faq_title">Частые вопросы</h2>
+        </div>
+        <div class="faq" id="faq-list">
+          <!-- Каждый пункт — нативный details для доступности -->
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq_q1">Что такое MoneyGo?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p data-i18n="faq_a1">MoneyGo — цифровая валюта.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq_q2">Это официальный сайт MoneyGo?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p data-i18n="faq_a2">Нет. MoneyGo Partners — независимый ресурс.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq_q3">Вы берёте комиссию или держите мои средства?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p data-i18n="faq_a3">Нет. Обмен происходит на стороне партнёра.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq_q4">Как выбрать надёжного партнёра?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p data-i18n="faq_a4">Смотрите статус, бейджи и условия партнёра.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq_q5">Чем отличается «действующий» от «потенциального»?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p data-i18n="faq_a5">«Действующий» уже работает с MoneyGo, «потенциальный» — может поддерживать.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq_q6">Что означает бейдж AUTO?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p data-i18n="faq_a6">Партнёр обрабатывает обмен автоматически.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="MoneyGo Partners">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#bg)" />
+              <path d="M9 22V10l7 7 7-7v12" fill="none" stroke="#0b0f1a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="brand-text">MoneyGo<span class="brand-accent"> Partners</span></span>
+        </a>
+        <p class="footer-tagline" data-i18n="footer_tagline">Независимый каталог проверенных партнёров MoneyGo.</p>
+        <p class="footer-independent" data-i18n="footer_independent">Не связан с MoneyGo официально.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <h3 data-i18n="footer_nav_title">Разделы</h3>
+        <a href="#partners" data-i18n="nav_partners">Партнёры</a>
+        <a href="#how" data-i18n="nav_how">Как это работает</a>
+        <a href="#become" data-i18n="nav_become">Стать партнёром</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      </nav>
+
+      <div class="footer-disclaimer">
+        <p data-i18n="footer_disclaimer">
+          MoneyGo Partners — независимый партнёрский ресурс и не является официальным сайтом MoneyGo.
+          Информация не является финансовой рекомендацией.
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year">2026</span> MoneyGo Partners. <span data-i18n="footer_rights">Все права защищены.</span></span>
+    </div>
+  </footer>
+
+  <!-- Данные и логика. Порядок важен: данные -> логика. -->
+  <script src="data/i18n.js"></script>
+  <script src="data/partners.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
