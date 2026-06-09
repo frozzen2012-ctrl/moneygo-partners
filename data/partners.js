@@ -18,7 +18,8 @@ window.PARTNERS = [
   {
     name: "Hybrid Digital Exchanger",
     logo: "assets/logos/hd-change.svg",
-    url: "https://hd-change.com/",
+    url: "https://hd-change.com/exchange-usdttrc20-to-mngusd/", // прямой обмен USDT(TRC20) → MNG
+
     badges: ["Top Rated"],
     status: "active",
     currencies: ["USDT", "THB"]
@@ -26,7 +27,8 @@ window.PARTNERS = [
   {
     name: "TOP EXCHANGE",
     logo: "assets/logos/top-exchange.svg",
-    url: "https://top-exchange.com/",
+    url: "https://top-exchange.com/exchange-usdttrc20-to-mngusd/", // прямой обмен USDT(TRC20) → MNG
+
     badges: ["Top Rated"],
     status: "active",
     currencies: ["USDT"]
