@@ -36,7 +36,8 @@ window.PARTNERS = [
   {
     name: "IN ONE GO",
     logo: "assets/logos/in1go.png",
-    url: "https://in1go.cc/",
+    url: "https://in1go.cc/exchange-mngusd-to-usdttrc201_2_3_4_5_6_7_8_9/", // прямой обмен MNG → USDT(TRC20)
+
     badges: ["Top Rated"],
     status: "active",
     currencies: ["USDT"]
