@@ -4,7 +4,7 @@
 
 Статический сайт без фреймворков и сборщиков — открывается простым открытием `index.html`. Двуязычный (RU/EN), тёмная тема, адаптив.
 
-**Прод:** https://frozzen2012-ctrl.github.io/moneygo-partners/
+**Прод:** https://money-go-partners.com/ (раздаётся через GitHub Pages, кастомный домен)
 
 ---
 
