@@ -13,12 +13,8 @@
 | IN ONE GO                 | `in1go.png`         | спарсен с сайта                     |
 | Abcobmen                  | `abcobmen.svg`      | спарсен с сайта                     |
 | WMExchange24              | `wmexchange24.png`  | спарсен (apple-touch-icon)          |
-| MULTIVAL exchange         | — (нет файла)       | **не спарсился — нужен вручную**    |
+| ATPayz                    | `atpayz.webp`       | спарсен с сайта                     |
 | BITKIT.MONEY              | `bitkit.svg`        | спарсен с сайта                     |
-
-> **MULTIVAL exchange:** сайт — SPA с инлайновым SVG-логотипом, чистый файл вытащить не удалось.
-> Положите сюда `multival.svg` или `multival.png` и пропишите путь в поле `logo` в `partners.js`.
-> Пока поле пустое — карточка показывает плитку с инициалами «MU».
 
 ## Требования
 
