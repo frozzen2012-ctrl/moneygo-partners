@@ -13,6 +13,30 @@
   var DEFAULT_LANG = "ru";
   var SUPPORTED = ["ru", "en"];
 
+  /* --------------------------- Аналитика -------------------------- */
+  // Лёгкий вендоронезависимый слой событий.
+  //  • Cloudflare Zaraz (zaraz.track) — нативные кастомные события Cloudflare.
+  //  • gtag / dataLayer — если позже подключат GA4, события уйдут и туда.
+  // Если ничего не подключено — тихий no-op. Добавь ?analyticsDebug в URL,
+  // чтобы видеть все события в консоли при проверке.
+  var ANALYTICS_DEBUG = /[?&]analyticsDebug\b/.test(location.search);
+  function track(name, props) {
+    props = props || {};
+    try {
+      if (window.zaraz && typeof window.zaraz.track === "function") {
+        window.zaraz.track(name, props);
+      }
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, props);
+      } else if (Array.isArray(window.dataLayer)) {
+        var payload = { event: name };
+        for (var k in props) if (Object.prototype.hasOwnProperty.call(props, k)) payload[k] = props[k];
+        window.dataLayer.push(payload);
+      }
+    } catch (e) { /* аналитика не должна ломать сайт */ }
+    if (ANALYTICS_DEBUG) console.log("[analytics]", name, props);
+  }
+
   /* ----------------------------- i18n ----------------------------- */
   function getLang() {
     var saved = null;
@@ -62,7 +86,9 @@
   function initLangSwitch() {
     document.querySelectorAll(".lang-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        applyLang(btn.getAttribute("data-lang"));
+        var lang = btn.getAttribute("data-lang");
+        applyLang(lang);
+        track("lang_switch", { lang: lang });
       });
     });
   }
@@ -202,6 +228,15 @@
       a.style.setProperty("--my", (e.clientY - r.top) + "px");
     });
 
+    // Событие: переход к партнёру (с пометкой прямого обмена)
+    a.addEventListener("click", function () {
+      track("partner_click", {
+        partner: p.name,
+        direct: /\/exchange/i.test(p.url),
+        currencies: (p.currencies || []).join(",")
+      });
+    });
+
     // Фолбэк логотипа: если файл не загрузился — плитка с инициалами
     if (p.logo) {
       var img = a.querySelector(".partner-logo");
@@ -339,6 +374,7 @@
 
       // Фолбэк: endpoint не настроен — открываем почтовый клиент.
       if (!endpointReady) {
+        track("partner_form_submit", { mode: "mailto" });
         window.location.href = buildMailto();
         setStatus("form_success", "is-success");
         return;
@@ -358,6 +394,7 @@
           if (res.ok) {
             form.reset();
             setStatus("form_success", "is-success");
+            track("partner_form_submit", { mode: "formspree" });
           } else {
             throw new Error("bad status");
           }
@@ -379,6 +416,20 @@
     }
   }
 
+  /* ------------------ Аналитика: CTA-кнопки ----------------------- */
+  function initCtaAnalytics() {
+    document.querySelectorAll(".hero-cta a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        track("cta_click", { cta: a.getAttribute("href") || "", area: "hero" });
+      });
+    });
+    document.querySelectorAll('.main-nav a, .mobile-nav a').forEach(function (a) {
+      a.addEventListener("click", function () {
+        track("nav_click", { target: a.getAttribute("href") || "" });
+      });
+    });
+  }
+
   /* --------------------------- Прочее ----------------------------- */
   function initYear() {
     var y = document.getElementById("year");
@@ -396,6 +447,7 @@
     initHeader();
     initReveal();
     initForm();
+    initCtaAnalytics();
     initYear();
   }
 
