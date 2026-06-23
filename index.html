@@ -376,5 +376,24 @@
   <script src="data/i18n.js"></script>
   <script src="data/partners.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- ============ Cloudflare Web Analytics ============
+    Приватная аналитика без cookies (баннер согласия не нужен).
+    КАК ВКЛЮЧИТЬ:
+      1. Cloudflare Dashboard → слева "Analytics & Logs" → "Web Analytics".
+      2. Add a site → money-go-partners.com → получишь token (строка вида "0123ab...").
+      3. Вставь его ниже вместо <CLOUDFLARE_TOKEN> (только сам токен, скобки убрать).
+    Пока токен не вставлен — скрипт ничего не грузит (ноль лишних запросов). -->
+  <script>
+    (function () {
+      var CF_TOKEN = "<CLOUDFLARE_TOKEN>";
+      if (!CF_TOKEN || CF_TOKEN.indexOf("<") !== -1) return; // токен ещё не задан
+      var s = document.createElement("script");
+      s.defer = true;
+      s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      s.setAttribute("data-cf-beacon", JSON.stringify({ token: CF_TOKEN }));
+      document.head.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
