@@ -20,7 +20,7 @@ window.I18N = {
     lang_label: "Сменить язык",
 
     // Hero
-    hero_badge: "Независимый партнёрский каталог",
+    hero_badge: "Независимый каталог проверенных обменников MoneyGo",
     hero_coin_label: "Цифровая валюта MoneyGo",
     hero_title: "Покупайте и продавайте MoneyGo через проверенных партнёров",
     hero_sub: "MoneyGo Partners собирает обменники, которые помогают купить и продать цифровую валюту MoneyGo за криптовалюту. Один удобный каталог вместо поиска вслепую — выбирайте партнёра и переходите напрямую на его сайт.",
@@ -123,7 +123,7 @@ window.I18N = {
     lang_label: "Switch language",
 
     // Hero
-    hero_badge: "Independent partner directory",
+    hero_badge: "Independent directory of trusted MoneyGo exchangers",
     hero_coin_label: "MoneyGo digital currency",
     hero_title: "Buy and sell MoneyGo through trusted partners",
     hero_sub: "MoneyGo Partners curates exchangers that help you buy and sell the MoneyGo digital currency for crypto. One convenient directory instead of searching blind — pick a partner and go straight to their site.",
